@@ -21,8 +21,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //forward movement
+        if (movementSpeed < 120)
+        {
+            movementSpeed += 0.01f;
+        }
         transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
         
+        //side movement
         if (Input.GetKeyDown(KeyCode.D))
         {
             lane++;
